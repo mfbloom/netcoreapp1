@@ -35,7 +35,6 @@ namespace WebAPIApplication.Controllers
             return new ObjectResult(item);
         }
         [HttpPost]
-        /*This is what I dont understand*/
         public IActionResult Create([FromBody] TodoItem item)
         {
             if (item == null)
