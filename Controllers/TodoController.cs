@@ -46,5 +46,12 @@ namespace WebAPIApplication.Controllers
             TodoItems.AddSum(item);
             return CreatedAtRoute("GetTodo", new { id = item.Key }, item);
         }
+        [HttpGet]
+        [Route("/Product")]
+        public int Product([FromQueryAttribute]int a, int b)
+        {
+            return Calculate.Multiply(a,b);
+        }
+
     }
 }
