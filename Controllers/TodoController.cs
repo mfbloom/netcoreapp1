@@ -4,7 +4,7 @@ using WebAPIApplication.Models;
 
 namespace WebAPIApplication.Controllers
 {
-    [Route("api/my/")]
+    [Route("api/my")]
     public class TodoController : Controller
     {
         public TodoController(ITodoRepository todoItems)
@@ -46,11 +46,13 @@ namespace WebAPIApplication.Controllers
             TodoItems.AddSum(item);
             return CreatedAtRoute("GetTodo", new { id = item.Key }, item);
         }
+        [Route("Product")]
         [HttpGet]
-        [Route("/Product")]
-        public int Product([FromQueryAttribute]int a, int b)
+        public string Product(int a, int b)
         {
-            return Calculate.Multiply(a,b);
+            string result = Calculate.Multiply(a,b).ToString();
+            return result;
+            //yay
         }
 
     }

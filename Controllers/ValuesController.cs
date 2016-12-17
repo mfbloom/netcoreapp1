@@ -9,7 +9,7 @@ namespace WebAPIApplication.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        // GET api/values
+        // GET api/value
         [HttpGet]
         public IEnumerable<string> Get()
         {
